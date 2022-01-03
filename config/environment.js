@@ -1,6 +1,12 @@
-//! CREATE ENVIRONMENT
-export const port = 4000
+//! CREATE 
+import dotenv from 'dotenv'
+dotenv.config()
+
+
 //export const dbURI = 'mongodb://127.0.0.1:27017/api-mongodb-start'
-export const dbURI = 'mongodb://127.0.0.1:27017/back-end'
+export const dbURI = process.env.MONGODB_URI || 'mongodb://127.0.0.1:27017/back-end'
+
+export const port = process.env.PORT || 4000
+
 //export const dbURI = 'mongodb://localhost/back-end'
-export const secret = "this is not airbnb"
+export const secret = process.env.SECRET || 'this is not airbnb'
