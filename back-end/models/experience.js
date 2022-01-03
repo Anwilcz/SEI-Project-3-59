@@ -46,7 +46,7 @@ const experienceSchema = new mongoose.Schema({
 //*virtual field
 experienceSchema.virtual('averageRating')
   .get(function () {
-    if (!this.reviews.length) return 'Not rated yet'
+    if (!this.reviews.length) return '0.00'
     const sumOfRatings = this.reviews.reduce((acc, review) => {
       if (!review.rating) return acc
       return acc + review.rating

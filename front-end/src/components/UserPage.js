@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from 'react'
 // import { useParams } from 'react-router-dom'
 import axios from 'axios'
-import { Card, Icon, Image, Grid, Container, Segment } from 'semantic-ui-react'
-import FavouritesDraft from '../components/FavouritesDraft'
+import { Card, Icon, Grid, Segment } from 'semantic-ui-react'
+import Favourites from './Favourites'
 import { getTokenFromLocalStorage } from './Helpers/auth'
+import { Divider } from 'rsuite'
 const UserPage = () => {
   const [profile, setProfile] = useState([])
   const [hasError, setHasError] = useState([])
@@ -39,8 +40,8 @@ const UserPage = () => {
   console.log('USER DETAILS =>', userDetails)
 
   const Page = () => (
-    <Container>
-      { !userDetails ?
+    <div>
+      {!userDetails ?
         <>
           <br />
           <br />
@@ -51,38 +52,34 @@ const UserPage = () => {
             <h1>Hi, <span className='coral'> {userDetails.username}</span>!</h1>
             <br />
             <br />
-            {profile ? <FavouritesDraft wishlist={profile.wishlist} /> : null}
+            {profile ? <Favourites wishlist={profile.wishlist} /> : null}
           </Segment>
-          
+
         </>
         :
         <Grid columns={2} padded='vertically' centered>
           <Grid.Row>
-            <Grid.Column mobile={16} tablet={8} computer={6}>
-              <Card>
-
+            <Grid.Column mobile={16} tablet={6} computer={6}>
+              <div className='custom-card margin-bottom'>
                 <Card.Content>
-                  <Image src={userDetails.profilePicture} wrapped ui={true} size='medium' circular />
+                  <div className='avatar-profile' style={{ background: userDetails.profilePicture ? `url(${userDetails.profilePicture})` : 'rgb(240, 240, 240)' }} />
                 </Card.Content>
 
                 <Card.Content>
-                  <Card.Header>
-                    {userDetails.firstName} has verified
-                  </Card.Header>
-                  <br></br>
+
+                  <p className='card-header'>{userDetails.username} {userDetails.firstName && userDetails.lastName && userDetails.mobile ? 'has verified' : 'has not verified yet'} </p>
+
+
                   <Card.Meta>
-                    <span className='identity' padded='vertically'>
-                      <Icon name='check' /> Identity</span>
+                    <p className='profile-details' padded='vertically'>{userDetails.firstName && userDetails.lastName ? '✓' : '✗'} Identity confirmed</p>
                   </Card.Meta>
-                  <br></br>
+
                   <Card.Meta>
-                    <span className='email' padded='vertically'>
-                      <Icon name='check' /> Email address</span>
+                    <p className='profile-details' padded='vertically'>{userDetails.email && userDetails.email ? '✓' : '✗'} Email confirmed</p>
                   </Card.Meta>
-                  <br></br>
+
                   <Card.Meta>
-                    <span className='phone' padded='vertically'>
-                      <Icon name='check' /> Phone number</span>
+                    <p className='profile-details' padded='vertically'>{userDetails.mobile && userDetails.mobile ? '✓' : '✗'} Phone number confirmed</p>
                   </Card.Meta>
                 </Card.Content>
                 <Card.Content>
@@ -90,74 +87,74 @@ const UserPage = () => {
                     Confirming account info helps keep the Experience community secure.
                   </Card.Description>
                 </Card.Content>
-              </Card>
-              <Card>
+              </div>
+              
+              <div className='custom-card'>
+                
                 <Card.Content>
-                  {userDetails.firstName}&apos;s Contact Details
+                  <p className='card-header'>{userDetails.username}&apos;s contact details</p>
                 </Card.Content>
                 <Card.Content>
                   <Card.Meta>
-                    <Icon name='phone' /> {userDetails.mobile}
+                    <p className='profile-details'><Icon name='phone' /> {userDetails.mobile ? userDetails.mobile : 'Not provided'}</p>
                   </Card.Meta>
-                  <br></br>
+
                   <Card.Meta>
-                    <Icon name='mail' /> {userDetails.email}
+                    <p className='profile-details'><Icon name='mail' /> {userDetails.email}</p>
                   </Card.Meta>
                 </Card.Content>
-              </Card>
+              </div>
             </Grid.Column>
-            <Grid.Column mobile={16} tablet={8} computer={6} centered>
-              <div className='user-name'>
-                <h1>Hi, I&apos;m {userDetails.firstName}</h1>
-              </div>
-              {/* <p>Joined in {userDetails.dob}</p> */}
-              <p>Joined in 2021</p>
-              <br />
-              <br />
-              <div className='about-anna'>
-                <h4>About {userDetails.firstName}</h4>
-                <br></br>
-                <h4>{userDetails.about}</h4>
-              </div>
-              <br></br>
-              <br></br>
-              <div>
-                <p>
-                  <Icon name='home' />  Lives in {userDetails.location}
-                </p>
-                <br></br>
-                <p>
-                  <Icon name='talk' /> {userDetails.firstName} can speak {userDetails.languages}
-                </p>
-              </div>
-              <br></br>
-              <br></br>
-              <br></br>
-              <Card>
+            
+            <Grid.Column mobile={16} tablet={10} computer={10}>
+              <div className='custom-card'>
+                <div className='user-name'>
+                  <br/>
+                  <h3 className='not-indented'>Hi, I&apos;m {userDetails.username}</h3>
+                  <p>Joined in 2021</p>
+                  <br/>
+                  <Divider />
+                  <p>First name: <span className='normal-text'>{userDetails.firstName ? userDetails.firstName : '-'}</span></p>
+                  <p>Last name: <span className='normal-text'>{userDetails.lastName ? userDetails.lastName : '-'}</span></p>
+                  <p>Date of birth: <span className='normal-text'>{userDetails.dob ? new Date(userDetails.dob).toLocaleDateString() : '-'}</span></p>
+                  <p>Occupation: <span className='normal-text'>{userDetails.occupation ? userDetails.occupation : '-'}</span></p>
+                </div>
+                <Divider/>
+                <div className='about-anna'>
+                  <h3 className='not-indented'>About {userDetails.username}</h3>
+                  <br/>
+                  <p className='normal-text'>{userDetails.about ? userDetails.about : 'Please tell us something about yourself! No description yet.'}</p>
+                </div>
+                <br/>
+                <div>
+                  <p><Icon name='home' />  Lives in {userDetails.location ? userDetails.location : '-'}</p>
+                  <p><Icon name='talk' /> Can speak {userDetails.languages ? userDetails.languages.length ? userDetails.languages.join(' ') : '-' : null}</p>
+                </div>
+
+                <Divider />
                 <Card.Content>
-                  <h4>{userDetails.firstName}&apos;s Reviews</h4>
+                  <h3 className='not-indented'>{userDetails.username}&apos;s Reviews</h3>
                 </Card.Content>
-                <Card.Description>
-                  <div className='profile-reviews'>
-                    <p>
-                      <Icon name='star outline' /> {userDetails.firstName} has no reviews at present.
-                    </p>
-                  </div>
-                  <br></br>
-                </Card.Description>
-              </Card>
+
+
+                <p className='profile-details'><Icon name='star outline' /> {userDetails.firstName} has no reviews at present.</p>
+
+
+
+
+              </div>
             </Grid.Column>
           </Grid.Row>
-          <Grid.Row>
-            <Container>
-              {profile ? <FavouritesDraft wishlist={profile.wishlist} /> : null}
-            </Container>
-          </Grid.Row>
+          <Grid.Column width={16}>
+            <div className="similar-experience-card-container">
+              {profile ? <Favourites wishlist={profile.wishlist} /> : null}
+            </div>
+          </Grid.Column>
 
 
         </Grid >
       }
-    </Container>
+    </div>
   )
 
   //! FILTER FOR EXPERIENCES THEY ARE HOSTING

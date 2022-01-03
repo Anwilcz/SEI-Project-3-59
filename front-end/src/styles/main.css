@@ -31,6 +31,7 @@
   margin-bottom: 28px !important
 }
 
+
 /* ! Body selector */
 body {
   position: relative;
@@ -1320,6 +1321,7 @@ select:-webkit-autofill:active {
   cursor: pointer;
   right: 0px!;
   transition: all .3s ease;
+  z-index: 100 !important;
 }
 
 .heart:hover {
@@ -1523,6 +1525,9 @@ select:-webkit-autofill:active {
     border-radius: 0px;
     margin-bottom: 0px;
   }
+  .host-container {
+    padding-top: 178px !important;
+  }
 }
 
 .form.coral-button {
@@ -1649,6 +1654,8 @@ select:-webkit-autofill:active {
 .experience-img-single {
   height: 100%;
   width: 100%;
+  background-size: cover !important;
+  background-position: center !important;
   border-radius: 12px;
 }
 
@@ -1680,7 +1687,8 @@ select:-webkit-autofill:active {
 }
 
 .similar-experience-container {
-  display: flex;
+  padding: 25px 0px !important;
+  display: flex !important;
   flex-wrap: wrap !important;
 }
 
@@ -1757,6 +1765,10 @@ h3.ui.header {
   justify-content: space-between;
 }
 
+.host-container {
+  padding-top: 130px;
+}
+
 .experience-details > h3 {
   margin-top: 5px !important;
   padding: 0px !important;
@@ -1769,7 +1781,29 @@ h3.ui.header {
   height: 60px !important;
   width: 60px !important;
   background-size: cover !important;
-  background-size: center !important;
+  background-position: center !important;
+}
+
+.avatar-small {
+  margin: 20px 15px !important;
+  border-radius: 50%;
+  border: 1px solid rgb(240, 240, 240);
+  height: 50px !important;
+  width: 50px !important;
+  background-size: cover !important;
+  background-position: center !important;
+}
+
+.avatar-profile {
+  margin-top: 15px !important;
+  margin-bottom: 40px !important;
+  border-radius: 50%;
+  border: 1px solid rgb(240, 240, 240);
+  width: 100% !important;
+  aspect-ratio: 1 !important;
+  border: 1px solid rgb(240, 240, 240);
+  background-size: cover !important;
+  background-position: center !important;
 }
 
 .experience-details {
@@ -1782,6 +1816,7 @@ h3.ui.header {
 }
 
 .custom-card {
+  overflow: hidden;
   border-radius: 12px;
   height: auto !important;
   padding: 24px;
@@ -1789,6 +1824,18 @@ h3.ui.header {
   margin-right: 0px !important;
   box-shadow: 0 1px 3px 0 #d4d4d5, 0 0 0 1px #d4d4d5;
 }
+
+.card-description {
+  border-radius: 12px;
+  margin-top: -20px;
+  margin-left: 0;
+  margin-bottom: 25px;
+}
+
+.ten.wide.column {
+  padding-right: 14px !important;
+}
+
 
 ul {
   padding-left: 25px !important;
@@ -1802,11 +1849,14 @@ ul {
 
 .included {
   padding: 8px 12px !important;
-
   margin-right: 15px !important;
+  margin-bottom: 15px !important;
 }
 
 @media (max-width: 767px) {
+  .not-indented-520 {
+    margin-left: -15px !important;
+  }
   h3 {
     font-size: 25px !important;
   }
@@ -1839,6 +1889,7 @@ ul {
 /* Whats included card start */
 .whats-included-container {
   display: flex;
+  flex-wrap: wrap;
 }
 .whats-included-card {
   padding: 20px !important;
@@ -1849,13 +1900,20 @@ ul {
 .meet-your-host-header {
   display: flex;
   flex-wrap: wrap;
-  align-items: center;
+  align-items: center !important;
   margin-bottom: 30px;
 }
 
+.card-header {
+  margin: -13px -24px 25px !important;
+  padding: 16px 24px 12px!important;
+  border-bottom: 1px solid lightgrey !important;
+  border-top: 1px solid lightgrey !important;
+}
+
 .meet-your-host-header > h3 {
-  padding: 16px 0 0 15px !important;
   font-size: 24px;
+  padding-left: 0 !important;
 }
 
 .meet-your-host-header > .avatar {
@@ -1890,19 +1948,19 @@ ul {
 
 .similar-experience-card {
   height: 300px;
-  width: 210px;
+  width: 210px !important;
+  margin: 0px !important;
   background-size: cover !important;
   background-position: center;
   border-radius: 12px;
 }
 
-.similar-experiences-card {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-right: 15px;
-  padding: 10px;
+.similar-experience-card-container {
+  position: relative !important;
+  margin-right: 28px !important;
 }
+
+
 
 .similar-experience-link {
   color: rgb(80, 80, 80);
@@ -1958,15 +2016,12 @@ div.things-to-know-container div.things-to-know-element {
   align-items: center;
 }
 
-.similar-experiences-card {
-  position: relative;
-}
 
 /* Heart Icon within Similar experience component */
 .heart-favourite-icon {
   position: absolute;
-  top: 30px;
-  right: 30px;
+  top: 15px;
+  right: 10px;
   color: rgb(248, 248, 248);
   cursor: pointer;
   transition: all .3s ease;
@@ -2059,6 +2114,16 @@ textarea:focus {
 
 .profile-reviews {
   padding-left: 20px;
+}
+
+.profile-details {
+  margin: 8px 0px !important;
+  padding-left: 8px !important;
+}
+
+.not-indented {
+  margin-left: 0 !important;
+  padding-left: 0 !important;
 }
 
 .ui.medium.circular.image {

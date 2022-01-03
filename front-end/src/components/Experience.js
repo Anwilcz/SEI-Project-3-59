@@ -126,7 +126,9 @@ const Experience = () => {
     <Container>
       <>
         {experience.image !== undefined && experience.image.length === 1 ?
-          <div className="main-image experience-img-single" style={{ background: `url(${experience.image !== undefined ? experience.image[0] : ''})` }}></div>
+          <div className="image-grid">
+            <div className="experience-img-single" style={{ background: `url(${experience.image !== undefined ? experience.image[0] : ''})` }}></div>
+          </div>
           :
           <div className="image-grid">
             <div className="main-image experience-img-0" style={{ background: `url(${experience.image !== undefined ? experience.image[0] : ''})` }}></div>
@@ -163,10 +165,10 @@ const Experience = () => {
 
   // Returing WhatYoullDo Component
   const WhatYoullDo = () => (
-    <Container>
+    <div>
       <Header as="h3">What you &apos;ll do</Header>
       <p className='normal-text'>{experience.description}</p>
-    </Container>
+    </div>
   )
 
   // Returning ChooseAvailableDates Component
@@ -306,9 +308,9 @@ const Experience = () => {
 
                           <Divider />
                           {/* <MeetYourHost /> Old React Semantic Component */}
-                          <Container className="meet-your-host">
+                          <div className="meet-your-host">
                             <Grid.Row className="meet-your-host-header" stackable>
-                              <div className='avatar' style={{ background: `url(${details.profilePicture})` }} />
+                              <div className='avatar-small' style={{ background: `url(${details.profilePicture})` }} />
                               {/* <Image src={details.profilePicture} avatar  className="myh-image"/> */}
 
                               <h3>Meet your host, {details.firstName}</h3>
@@ -320,11 +322,11 @@ const Experience = () => {
 
                             <p>(Not yet reviewed)</p>
 
-                          </Container>
+                          </div>
                         </Grid.Column>
                         <Grid.Column className='custom-card' width={6}>
 
-                          <h3>Available this month:</h3>
+                          <h3 className='not-indented-520'>Available this month:</h3>
                           {dates ?
                             dates.map(day => {
                               return (
@@ -371,7 +373,7 @@ const Experience = () => {
 
                       <Grid.Row>
                         <Grid.Column>
-                        
+
                           {experience.reviews ?
                             <>
                               <Header as="h3">
@@ -403,12 +405,12 @@ const Experience = () => {
                       </Grid.Row> */}
                       <Grid.Row columns={1}>
                         <Grid.Column>
-                          <Container>
-                            <Header as="h3">Things to know</Header>
-                            <Grid>
-                              <Grid.Row>
-                                <div className="things-to-know-container">
-                                  {/* {experience.thingsToKnow !== undefined ?
+
+                          <Header as="h3">Things to know</Header>
+                          <Grid>
+                            <Grid.Row>
+                              <div className="things-to-know-container">
+                                {/* {experience.thingsToKnow !== undefined ?
                                     experience.thingsToKnow.map((item, index) => {
                                       // console.log('Header ->', item.header)
                                       return (
@@ -425,10 +427,10 @@ const Experience = () => {
                                     }) 
                                     : // Loading state
                                     <div>Loading...</div>} */}
-                                </div>
-                              </Grid.Row>
-                            </Grid>
-                          </Container>
+                              </div>
+                            </Grid.Row>
+                          </Grid>
+
                         </Grid.Column>
                       </Grid.Row>
                       <Grid.Row columns={1}>
@@ -442,16 +444,21 @@ const Experience = () => {
                                 // console.log(item.name)
                                 // console.log(item.price)
                                 return (
-                                  <div key={index} className="similar-experiences-card" id={item._id}>
+                                  <div key={index} className="similar-experience-card-container" id={item._id}>
                                     <Link to={`/experiences/experience/${item.id}`} className="similar-experience-link">
                                       <div>
                                         {/* <img className="similar-experiences-card-img" src={item.image[1]}/> */}
-                                        <div className="similar-experience-card similar-experience-img" style={{ background: `url(${item.image !== undefined ? item.image[0] : ''})` }}></div>
+                                        <div className='ui slide masked reveal image inspiration-image'>
+                                          <div className='similar-experience-card similar-experience-imgvisible content' style={{ background: `url(${item.image[0]})` }} />
+                                          <div className='similar-experience-card similar-experience-img hidden content' style={{ background: `url(${item.image[1]})` }} />
+                                        </div>
+                                        {/* <div className="similar-experience-card similar-experience-img" style={{ background: `url(${item.image !== undefined ? item.image[0] : ''})` }}></div> */}
                                       </div>
                                       <div className="card-description">
                                         <p className="card-title">{`${item.name.slice(0, 25)}...`}</p>
-                                        <p className="similar-experience-rating"><Icon name='star' size='small' className="star-rating" />{item.averageRating}<span>({item.reviews.length})</span></p>
-                                        <span className="card-price"><strong>From {item.price}</strong>/ Person</span>
+                                        <p className="similar-experience-rating"><Icon name='star' size='small' className="star-rating" />{item.averageRating}<span>({item.reviews.length})</span>
+                                          <span className="card-price"><strong>From {item.price}</strong>/ Person</span>
+                                        </p>
                                       </div>
                                     </Link>
                                     <Icon name='heart outline' size='big' className="heart-favourite-icon" onClick={(event) => {

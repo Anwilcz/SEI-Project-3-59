@@ -83,7 +83,7 @@ const Home = () => {
                     <div className='inspiration-image hidden content' style={{ background: `url(${experience.image[1]})` }} />
                   </div>
                   <div className='content'>
-                    <p>{experience.name}</p>
+                    <p>{`${experience.name.slice(0, 25)}...`}</p>
                     <div className='meta'>
                       <span >{experience.category}</span>
                     </div>

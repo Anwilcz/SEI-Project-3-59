@@ -82,7 +82,7 @@ const Register = ({ state, setState, createNewUser }) => {
               <p>Password</p>
             </div>
             <input
-              type='text'
+              type='password'
               name='password'
               placeholder='Password'
               value={formData.password}
@@ -95,7 +95,7 @@ const Register = ({ state, setState, createNewUser }) => {
               <p>Password confirmation</p>
             </div>
             <input
-              type='text'
+              type='password'
               name='passwordConfirmation'
               placeholder='Password confirmation'
               value={formData.passwordConfirmation}
