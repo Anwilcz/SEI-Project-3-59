@@ -20,7 +20,6 @@ The project aim was to build a full-stack application including own backend and 
 </br>
 </br>
 </br>
-Deployment coming soon.. 
 
 [ View deployment ](https://airbnb-experience.herokuapp.com/)
 
