@@ -22,7 +22,7 @@ The project aim was to build a full-stack application including own backend and 
 </br>
 Deployment coming soon.. 
 
-[ View deployment ](http://)
+[ View deployment ](https://airbnb-experience.herokuapp.com/)
 
 </br>
 </br>
