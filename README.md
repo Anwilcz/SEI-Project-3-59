@@ -1,12 +1,5 @@
 # Project 3 - MERN Full-Stack Application
 
-<<<<<<< HEAD
-PLEASE TELL ME YOU CAN SEE THIS !!!!!!!
-Rhona Petersen
-does this work?
-Jamie Joahill
-Anna Wilczynska
-=======
 Group size: ***[Anna Wilczynska](https://github.com/anwilcz), [Rhona Petersen](https:///github.com/rhonabpetersen), [Talia Glantz](https:///github.com/taliaglantz), [Jamie Joahill](https:///github.com/JamieJoahill)*** 
 </br>
 Duration: ***10 days***
@@ -19,21 +12,10 @@ Technologies used: ***JavaScript, React, MongoDB, Express, Node, CSS, SAAS, Sema
 
 ## Overview
 
-The project aim was to build a full-stack application including own backend and frontend setup by using Express API to serve data from the Mongo database and render information in the browser by JavaScript React.
+The project aim was to build a full-stack application including own backend and frontend setup by using Express API to serve data from the Mongo database and render information in the browser by JavaScript React. The application was inspired by the Airbnb experience that operates the marketplace for listed activities. The project includes various filters that allow clipping data to the area of interest of potential customers, user authentication and post features for profile and custom experience page. Registered users can add their own experience through a multi field form request and favourite listings that already exist in the database.
 
-## Contributors’ Notes
 
-### Anna
-Add your text here..
 
-### Rhona
-Add your text here..
-
-### Talia
-Add your text here..
-
-### Jamie
-Add your text here..
 
 </br>
 </br>
@@ -44,4 +26,3 @@ Deployment coming soon..
 
 </br>
 </br>
->>>>>>> e0b4daca4601365954c53c9f70286763ef23ec38
