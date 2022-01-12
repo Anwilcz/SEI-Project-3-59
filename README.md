@@ -415,4 +415,4 @@ The database was managed by MongoDB Atlas and loaded onto AWS Cloud<br>
 - Preserve the username of the logged in user in local storage, so that it does not disappear on page reload.
 
 ## Copyright and licensing
-- This project was built for educational purposes only.
+This project was built for educational purposes only.
