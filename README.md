@@ -7,7 +7,7 @@ Duration: ***10 days***
 Technologies used: ***JavaScript, React, MongoDB, Express, Node.js, CSS, Semantic UI)***
 </br>
 </br>
-![Main image](https://res.cloudinary.com/dulbdr0in/image/upload/v1641944830/ReadMe%20Images/placeholder_azgtkl.jpg)
+![Main image](https://res.cloudinary.com/dulbdr0in/image/upload/v1642026320/ReadMe%20Images/SEI_ReadMes/Airbnb/airbnb-main_m12yi7.png)
 </br>
 ### [✨ View deployment ✨](https://airbnb-experience.herokuapp.com/)
 </br>
@@ -125,7 +125,7 @@ Before committing to the development stage we had a group discussion on the conc
 At the beginning, we decided to split the group into two subgroups each responsible for backend or frontend. Talia and I prepared the frontend directory and Rhona& Jamie focused on the backend. When the setup was completed, we built the main elements of the database. We identified the types of models that would be used to structure database documents and the relationships between them. Then, we decided to support each other ticking off the tasks on the Trello list.
 </br>
 </br>
-![Tasks](https://res.cloudinary.com/dulbdr0in/image/upload/v1641950635/ReadMe%20Images/Screenshot_2022-01-06_at_00.23.26_ctun06.png)
+![Tasks](https://res.cloudinary.com/dulbdr0in/image/upload/v1641950635/ReadMe%20Images/SEI_ReadMes/Airbnb/Screenshot_2022-01-06_at_00.23.26_ctun06.png)
 
 ### My contribution
 My contribution to the project includes: 
@@ -262,6 +262,10 @@ export const secureRoute = async (req, res, next) => {
    }
 }
 ```
+</br>
+Login pop-up window:</br>
+</br>
+![Login popup](https://res.cloudinary.com/dulbdr0in/image/upload/v1642026309/ReadMe%20Images/SEI_ReadMes/Airbnb/airbnb_login_sxfblm.png)
 
 ### Data validation
 Express router accepts only POST and PUT requests that follow route requirements and the object collection Schema. 
@@ -296,30 +300,23 @@ The frontend of the project was built with React and libraries such as SemanticU
 ### Navbars
 Creating navbars that would respond to different React router routes was one of the main challenges of this project. Navbars change their appearance depending on the URL the user navigates to. The visibility of different DOM elements is manipulated in JavaScript and determined by useState hooks, accessing boolean values.</br>
 </br>
-Home page view:</br>
+Different home page and experience index navbar views:</br>
 </br>
-![Home page navbar - picture1](https://res.cloudinary.com/dulbdr0in/image/upload/v1641952381/ReadMe%20Images/Screenshot_2022-01-06_at_02.19.30_txis1q.png)</br>
-![Home page navbar - picture2](https://res.cloudinary.com/dulbdr0in/image/upload/v1641952373/ReadMe%20Images/Screenshot_2022-01-06_at_02.19.20_yzxe9o.png)</br>
-</br>
-Experiences index page view:</br>
-</br>
-![Experiences index navbar - picture1](https://res.cloudinary.com/dulbdr0in/image/upload/v1641952563/ReadMe%20Images/Screenshot_2022-01-06_at_02.22.16_zdwung.png)</br>
-![Experiences index navbar - picture2](https://res.cloudinary.com/dulbdr0in/image/upload/v1641952588/ReadMe%20Images/Screenshot_2022-01-06_at_02.22.29_epxi55.png)</br>
+![Navbars](https://res.cloudinary.com/dulbdr0in/image/upload/v1642026306/ReadMe%20Images/SEI_ReadMes/Airbnb/airbnb-navbars_fbkwki.png)</br>
 
 ### Calendar
 Calendar feature is based on the Rsuite React component and adapted to the app design requirements.</br>
 </br>
-![Calendar - picture1](https://res.cloudinary.com/dulbdr0in/image/upload/v1641952871/ReadMe%20Images/Screenshot_2022-01-06_at_02.20.35_bi2tno.png)</br>
-![Calendar - picture2](https://res.cloudinary.com/dulbdr0in/image/upload/v1641952904/ReadMe%20Images/Screenshot_2022-01-06_at_02.21.20_xkvoeb.png)</br>
+![Calendar](https://res.cloudinary.com/dulbdr0in/image/upload/v1642026301/ReadMe%20Images/SEI_ReadMes/Airbnb/airbnb-calendar_ymroho.png)</br>
 </br>
 Original component’s look:</br>
 </br>
-![Calendar - origina component](https://res.cloudinary.com/dulbdr0in/image/upload/v1641952899/ReadMe%20Images/Screenshot_2022-01-06_at_02.39.13_zhukt1.png)
+![Calendar - original component](https://res.cloudinary.com/dulbdr0in/image/upload/v1641952899/ReadMe%20Images/SEI_ReadMes/Airbnb/Screenshot_2022-01-06_at_02.39.13_zhukt1.png)
 
 ### Forms
 The new experience form handles data validation and displays alerts from the backend.</br>
 </br>
-![Form - picture1](urlhere)
+![Forms](https://res.cloudinary.com/dulbdr0in/image/upload/v1642026296/ReadMe%20Images/SEI_ReadMes/Airbnb/airbnb_new_experience_dxcf2c.png)
 
 ### Filters
 The application includes various filters that allow clipping data to the area of interest of potential customers.
@@ -327,20 +324,18 @@ The application includes various filters that allow clipping data to the area of
 - Category 
 - Price 
 - Rating
+</br>
+![Filters](https://res.cloudinary.com/dulbdr0in/image/upload/v1642026302/ReadMe%20Images/SEI_ReadMes/Airbnb/airbnb_filters_mkrskr.png)
 
 ### Responsive design
 The application is adapted to different screen sizes and fully responsive on computer screens as well as mobile devices. The consistency of the data displayed on different screen sizes is maintained.</br>
 </br>
-![Responsive - picture1](https://res.cloudinary.com/dulbdr0in/image/upload/v1641952884/ReadMe%20Images/Screenshot_2022-01-06_at_02.26.34_wsxtgn.png)
-![Responsive - picture2](https://res.cloudinary.com/dulbdr0in/image/upload/v1641952891/ReadMe%20Images/Screenshot_2022-01-06_at_02.28.02_ijc5ow.png)</br>
-![Responsive - picture3](urlhere)
-![Responsive - picture4](urlhere)
+
+![Responsive design](https://res.cloudinary.com/dulbdr0in/image/upload/v1642026302/ReadMe%20Images/SEI_ReadMes/Airbnb/airbnb_responsive_design_jg5n20.png)
 
 ### API's
 The project consumes its own API as well as Mapbox and Cloudinary.
 Mapbox API provides access to location services whereas Cloudinary handles image upload.</br>
-</br>
-![Map - picture1](urlhere)
 
 ## Deployment
 The application was deployed on Heroku.<br>
