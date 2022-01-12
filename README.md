@@ -265,6 +265,7 @@ export const secureRoute = async (req, res, next) => {
 </br>
 Login pop-up window:</br>
 </br>
+
 ![Login popup](https://res.cloudinary.com/dulbdr0in/image/upload/v1642026309/ReadMe%20Images/SEI_ReadMes/Airbnb/airbnb_login_sxfblm.png)
 
 ### Data validation
@@ -325,6 +326,7 @@ The application includes various filters that allow clipping data to the area of
 - Price 
 - Rating
 </br>
+
 ![Filters](https://res.cloudinary.com/dulbdr0in/image/upload/v1642026302/ReadMe%20Images/SEI_ReadMes/Airbnb/airbnb_filters_mkrskr.png)
 
 ### Responsive design
