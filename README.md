@@ -53,6 +53,7 @@ password: pass123% </br>
   - [API's](#apis)
 - [Deployment](#deployment)
 - [Installation](#installation)
+- [Wins and challenges](#wins-and-challenges)
 - [Key learning](#key-learning)
 - [Future upgrades](#future-upgrades)
 - [Copyright and licensing](#copyright-and-licensing)
