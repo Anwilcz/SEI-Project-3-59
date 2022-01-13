@@ -77,7 +77,7 @@ The application was inspired by the Airbnb experience that operates the marketpl
 - **Express** - structures backend of the application
 - **React** - builds frontend of a single-page application
 - **Axios** - serves HTTP requests
-- **Rsuite** - library of react components
+- **Rsuite** - library of React components
 - **SemanticUI** - CSS styling library
 - **Mongoose** - ODM library for MongoDB
 
@@ -342,8 +342,8 @@ Mapbox API provides access to location services whereas Cloudinary handles image
 
 ## Deployment
 The application was deployed on Heroku.<br>
-The database was managed by MongoDB Atlas and loaded onto AWS Cloud<br> 
-[View deployment](https://airbnb-experience.herokuapp.com/)
+The database was managed by MongoDB Atlas and loaded onto AWS Cloud.<br> 
+[[View deployment]](https://airbnb-experience.herokuapp.com/)
 
 ## Installation
 1. Clone GitHub project repository to your local machine.
@@ -390,7 +390,7 @@ The database was managed by MongoDB Atlas and loaded onto AWS Cloud<br>
 
 ### Wins
 - Building a fully responsive application with a complex user interface.
-- Navbars that change their dimensions and appearance for different react routes.
+- Navbars that change their dimensions and appearance for different React routes.
 - Making the date range picker work as a main data filter.
 - Enabling usage of a variety of filters at the same time.
 - Managing all the CRUD routes with custom middleware and consuming its own API.
@@ -403,7 +403,7 @@ The database was managed by MongoDB Atlas and loaded onto AWS Cloud<br>
 ## Key learning
 - Use local storage to preserve variable values.
 - Learning how to use React states to switch visibility of the components and manipulate DOM with JavaScript.
-- Learning how to consume and modify react components to achieve desired look and functionality.
+- Learning how to consume and modify React components to achieve desired look and functionality.
 - Getting familiar with libraries and their components implementation based on docs.
 - Facilitating data clipping depending on variety of filters, saving search information in URL string.
 - Understanding how to establish connection and consume public API to display map components and handle image uploads.
