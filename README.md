@@ -126,6 +126,9 @@ Before committing to the development stage we had a group discussion on the conc
 At the beginning, we decided to split the group into two subgroups each responsible for backend or frontend. Talia and I prepared the frontend directory and Rhona& Jamie focused on the backend. When the setup was completed, we built the main elements of the database. We identified the types of models that would be used to structure database documents and the relationships between them. Then, we decided to support each other ticking off the tasks on the Trello list.
 </br>
 </br>
+We agreed to attend morning stand-ups and the end of the day catch-up calls every day throughout the project week. We used the morning standups to identify our daily targets and split the work into steps. We would estimate how much of the resource we require to complete a particular task to fit in the timeline and discuss how we can support team members working on high complexity tasks. At the end of each day, we had a catch-up call on Zoom, where we would summarize our work and sign off the completed tasks. We were often present on Zoom or sharing our thoughts on Slack conversations.
+</br>
+</br>
 ![Tasks](https://res.cloudinary.com/dulbdr0in/image/upload/v1641950635/ReadMe%20Images/SEI_ReadMes/Airbnb/Screenshot_2022-01-06_at_00.23.26_ctun06.png)
 
 ### My contribution
@@ -301,7 +304,62 @@ The frontend of the project was built with React and libraries such as SemanticU
 
 ### Navbars
 Creating navbars that would respond to different React router routes was one of the main challenges of this project. Navbars change their appearance depending on the URL the user navigates to. The visibility of different DOM elements is manipulated in JavaScript and determined by useState hooks, accessing boolean values.</br>
-</br>
+
+```
+ const history = useHistory()
+ const location = useLocation()
+ const [price, setPrice] = useState([25, 250])
+ const [visibleRegister, setVisibilityRegister] = useState(false)
+ const [visibleSeeYou, setVisibilitySeeYou] = useState(false)
+ const [visibleLogin, setVisibilityLogin] = useState(false)
+ const [username, setUsername] = useState(false)
+ const [newUser, createNewUser] = useState(false)
+ const [openDatePicker, setDatePicker] = useState(false)
+ const [openFilters, setOpenFilters] = useState(false)
+ const [datesClicked, setDatesClicked] = useState(false)
+ const [displayDates, setDisplayDates] = useState('Select dates')
+ const [startDate, setStartDate] = useState('Start date')
+ const [endDate, setEndDate] = useState('end date')
+ const [minRating, setMinRating] = useState(0)
+ const [newRange, setNewRange] = useState(true)
+ const [averagePrice, setAveragePrice] = useState('0')
+ const [categoryString, setCategoryString] = useState('')
+ const [categories] = useState([])
+```
+```
+ // Updates dates displayed on buttons
+ useEffect(() => {
+   let datesToDisplay
+   if (startDate === endDate) {
+     datesToDisplay = `${startDate}`
+   } else {
+     datesToDisplay = `${startDate} - ${endDate}`
+   }
+   setDisplayDates(datesToDisplay)
+ }, [startDate, endDate])
+ 
+ 
+ // Changes focus on selected button
+ useEffect(() => {
+   if (openDatePicker) {
+     toggleButton()
+   }
+ }, [datesClicked])
+
+
+// Opens filter bar when redirected to experiences url 
+useEffect(() => {
+   if (location.pathname === '/experiences') {
+     setOpenFilters(true)
+     getAveragePrice()
+ 
+   } else {
+     setOpenFilters(false)
+     setDatePicker(false)
+   }
+ }, [location.pathname])
+```
+
 Different home page and experience index navbar views:</br>
 </br>
 ![Navbars](https://res.cloudinary.com/dulbdr0in/image/upload/v1642026306/ReadMe%20Images/SEI_ReadMes/Airbnb/airbnb-navbars_fbkwki.png)</br>
@@ -309,6 +367,32 @@ Different home page and experience index navbar views:</br>
 ### Calendar
 Calendar feature is based on the Rsuite React component and adapted to the app design requirements.</br>
 </br>
+
+```
+ // Date picker calendar component -> rsuite module
+ const datePicker = (
+   <div className='ui item navbar-secondary'>
+     <div className='button-center'>
+       <p>Experiences</p>
+     </div>
+     {datePickerButtonLarge}
+     <DateRangePicker format={'dd-MMM-yyyy'} toggleAs={'button'}
+       onSelect={function (date) {
+         const options = { year: 'numeric', month: 'short', day: 'numeric' }
+         if (newRange) {
+           setStartDate(date.toLocaleDateString(undefined, options))
+           setNewRange(false)
+         } else {
+           setEndDate(date.toLocaleDateString(undefined, options))
+           setNewRange(true)
+         }
+       }} onEnter={function () {
+         setDatesClicked(true)
+       }} />
+   </div>
+ )
+```
+
 ![Calendar](https://res.cloudinary.com/dulbdr0in/image/upload/v1642026301/ReadMe%20Images/SEI_ReadMes/Airbnb/airbnb-calendar_ymroho.png)</br>
 </br>
 Original component’s look:</br>
@@ -317,7 +401,11 @@ Original component’s look:</br>
 
 ### Forms
 The new experience form handles data validation and displays alerts from the backend.</br>
-</br>
+
+```
+  <p className='errors'>{errorData.name ? errorData.name.kind : null}</p>
+```
+
 ![Forms](https://res.cloudinary.com/dulbdr0in/image/upload/v1642026296/ReadMe%20Images/SEI_ReadMes/Airbnb/airbnb_new_experience_dxcf2c.png)
 
 ### Filters
@@ -327,6 +415,18 @@ The application includes various filters that allow clipping data to the area of
 - Price 
 - Rating
 </br>
+Search parameters are saved in url string:
+</br>
+</br>
+
+```
+ const setFilter = () => {
+   history.push({
+     pathname: '/experiences',
+     search: `cat=${categoryString}&from=${startDate}&to=${endDate}&pricemin=${price[0]}&pricemax=${price[1]}&rating=${minRating}`
+   })
+ }
+```
 
 ![Filters](https://res.cloudinary.com/dulbdr0in/image/upload/v1642026302/ReadMe%20Images/SEI_ReadMes/Airbnb/airbnb_filters_mkrskr.png)
 
